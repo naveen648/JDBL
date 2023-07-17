@@ -1,0 +1,78 @@
+2023-07-13 10:08:01
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.202-b08 mixed mode):
+
+"DestroyJavaVM" #12 prio=5 os_prio=0 tid=0x0000000002d94800 nid=0xe84 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Thread-0" #11 prio=5 os_prio=0 tid=0x000000001b904800 nid=0x15c4 waiting on condition [0x000000001c07f000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at MTBasics$MyThread.run(MTBasics.java:30)
+
+"Service Thread" #10 daemon prio=9 os_prio=0 tid=0x000000001b7e1000 nid=0x2ce4 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C1 CompilerThread2" #9 daemon prio=9 os_prio=2 tid=0x000000001b703800 nid=0x19f4 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" #8 daemon prio=9 os_prio=2 tid=0x000000001b702800 nid=0x1a98 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #7 daemon prio=9 os_prio=2 tid=0x000000001b701800 nid=0x29c waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Monitor Ctrl-Break" #6 daemon prio=5 os_prio=0 tid=0x000000001b69f000 nid=0x13b4 runnable [0x000000001ba7e000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:171)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	- locked <0x0000000780b2bbc8> (a java.io.InputStreamReader)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:161)
+	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+	- locked <0x0000000780b2bbc8> (a java.io.InputStreamReader)
+	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+	at com.intellij.rt.execution.application.AppMainV2$1.run(AppMainV2.java:53)
+
+"Attach Listener" #5 daemon prio=5 os_prio=2 tid=0x0000000019f29800 nid=0x2d70 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=2 tid=0x0000000019f26800 nid=0x1940 runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" #3 daemon prio=8 os_prio=1 tid=0x0000000002e8d000 nid=0x1628 in Object.wait() [0x000000001b27f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x0000000780908ed0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	- locked <0x0000000780908ed0> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+"Reference Handler" #2 daemon prio=10 os_prio=2 tid=0x0000000002e84000 nid=0x2b84 in Object.wait() [0x000000001b17f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x0000000780906bf8> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	- locked <0x0000000780906bf8> (a java.lang.ref.Reference$Lock)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+"VM Thread" os_prio=2 tid=0x0000000019ee8000 nid=0x12e0 runnable 
+
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x0000000002daa000 nid=0x2e9c runnable 
+
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x0000000002dab800 nid=0x1038 runnable 
+
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x0000000002dad800 nid=0x2ba0 runnable 
+
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x0000000002daf000 nid=0x2ccc runnable 
+
+"VM Periodic Task Thread" os_prio=2 tid=0x000000001b820000 nid=0x2504 waiting on condition 
+
+JNI global references: 11
+
