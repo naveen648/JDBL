@@ -1,9 +1,8 @@
 package com.example.JPA.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Set;
 
 @Entity
 public class Book {
@@ -15,6 +14,10 @@ public class Book {
     private String name;
     private String authorName;
     private int cost;
+
+    @ManyToOne
+    @JoinColumn
+    private BookCategory bookCategory;
 
     public int getId() {
         return id;
@@ -48,18 +51,34 @@ public class Book {
         this.cost = cost;
     }
 
+    public BookCategory getBookCategory() {
+        return bookCategory;
+    }
+
+    public void setBookCategory(BookCategory bookCategory) {
+        this.bookCategory = bookCategory;
+    }
+
     public Book(String name, String authorName, int cost) {
         this.name = name;
         this.authorName = authorName;
         this.cost = cost;
     }
 
-    public Book(int id, String name, String authorName, int cost) {
-        this.id = id;
+    public Book(String name, String authorName, int cost, int bookCategory) {
         this.name = name;
         this.authorName = authorName;
         this.cost = cost;
+        this.bookCategory=new BookCategory();
+        this.bookCategory.setId(bookCategory);
     }
+
+    //    public Book(int id, String name, String authorName, int cost) {
+//        this.id = id;
+//        this.name = name;
+//        this.authorName = authorName;
+//        this.cost = cost;
+//    }
 
     public Book() {
     }

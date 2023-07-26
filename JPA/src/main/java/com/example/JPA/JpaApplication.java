@@ -1,5 +1,7 @@
 package com.example.JPA;
 import com.example.JPA.Models.Book;
+import com.example.JPA.Models.BookCategory;
+import com.example.JPA.Repository.BookCategoryRepository;
 import com.example.JPA.Repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -22,20 +24,39 @@ public class JpaApplication implements CommandLineRunner {
 	BookRepository bookRepository;
 	//Note: Don't keep it inside the run() function (OR) Above Main Function, bcoz it causes error in sequence Id Generation
 
+	@Autowired
+	BookCategoryRepository bookCategoryRepository;
+
 	@Override
 	public void run(String... args) throws Exception {
 
-//		Set<Book> books=new HashSet<>();
-		List<Book> books=new ArrayList<>();
-		Book b1=new Book("C++", "Snowden",150);
-		Book b2=new Book("C#","Joe",265);
-		Book b3=new Book("Java","Ivar",956);
-		Book b4=new Book("JPA","Ragnar",500);
+		Set<Book> books=new HashSet<>();
+//
+		Book b1=new Book("Spring Boot","Mosh",500,2);
+		Book b2=new Book("Angular","wiley",600,2);
+		Book b3=new Book("Chemistry","cudfin",60,1);
 
 		books.add(b1);
 		books.add(b2);
 		books.add(b3);
-		books.add(b4);
+//		bookRepository.saveAll(books);
+//
+//		bookCategoryRepository.save(new BookCategory("Non-Programming Languages"));
+//
+//		bookCategoryRepository.save(new BookCategory("Programming Languages",books));
+
+
+
+//		List<Book> books=new ArrayList<>();
+//		Book b1=new Book("C++", "Snowden",150);
+//		Book b2=new Book("C#","Joe",265);
+//		Book b3=new Book("Java","Ivar",956);
+//		Book b4=new Book("JPA","Ragnar",500);
+//
+//		books.add(b1);
+//		books.add(b2);
+//		books.add(b3);
+//		books.add(b4);
 
 //		bookRepository.save(b1);
 //		bookRepository.save(b2);
